@@ -131,14 +131,6 @@ def read_package(workout_type: str, data: list[Union[int, float]]) -> Union[
             }
 
     return DICT[workout_type](*data)
-    """
-
-    if workout_type == 'SWM':
-        return Swimming(*data)
-    elif workout_type == 'RUN':
-        return Running(*data)
-    elif workout_type == 'WLK':
-        return SportsWalking(*data)"""
 
 
 def main(training: Training) -> None:
