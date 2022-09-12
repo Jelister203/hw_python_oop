@@ -3,7 +3,6 @@ import pytest
 import types
 import inspect
 from conftest import Capturing
-from typing import Type
 
 try:
     import homework
