@@ -125,12 +125,25 @@ class Swimming(Training):
 def read_package(workout_type: str, data: list[Union[int, float]]) -> Union[
         Training, Union[Running, SportsWalking, Swimming]]:
     """Прочитать данные полученные от датчиков."""
+
+    """
     DICT = {'SWM': Swimming,
             'RUN': Running,
             'WLK': SportsWalking,
             }
 
     return DICT[workout_type](*data)
+
+    ЯП не нравится такой вариант, выкидываеет ошибку в файле test_homework.py
+    ('type' object is not subscriptable)
+    Решение данной проблемы не нашел, наставники не подсказали :(
+    """
+    if workout_type == 'SWM':
+        return Swimming(*data)
+    elif workout_type == 'RUN':
+        return Running(*data)
+    elif workout_type == 'WLK':
+        return SportsWalking(*data)
 
 
 def main(training: Training) -> None:
