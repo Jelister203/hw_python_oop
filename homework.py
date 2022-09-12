@@ -1,4 +1,4 @@
-from dataclasses import dataclass, Type
+from dataclasses import dataclass
 from typing import Union
 
 
