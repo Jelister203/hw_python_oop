@@ -1,5 +1,5 @@
 from dataclasses import dataclass
-from typing import Union
+from typing import Union, List
 
 
 @dataclass
@@ -122,7 +122,7 @@ class Swimming(Training):
                 * self.CALORIES_COFF_2 * self.weight)
 
 
-def read_package(workout_type: str, data: list[Union[int, float]]) -> Union[
+def read_package(workout_type: str, data: List[Union[int, float]]) -> Union[
         Training, Union[Running, SportsWalking, Swimming]]:
     """Прочитать данные полученные от датчиков."""
 
