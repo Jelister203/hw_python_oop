@@ -122,15 +122,10 @@ class Swimming(Training):
                 * self.CALORIES_COFF_2 * self.weight)
 
 
-def read_package(workout_type: str, data: list[Union[int, float]]) -> Training:
+def read_package(workout_type: str, data: list[Union[int, float]]) -> Union[
+        Training, Union[Running, SportsWalking, Swimming]]:
     """Прочитать данные полученные от датчиков."""
-    
-    """
-     -> Union[Training, Union[Running, SportsWalking, Swimming]]
-    такой вариант ЯП не понравился: возвращал 'type' object is not subcriptable
-    в файле test_homework.py
-    
-    """
+
     DICT = {'SWM': Swimming,
             'RUN': Running,
             'WLK': SportsWalking,
